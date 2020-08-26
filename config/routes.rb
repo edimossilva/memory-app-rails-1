@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/new'
   post 'users/new', action: :create, controller: 'users'
   get 'users', action: :index, controller: 'users'
+  delete 'users/:id', action: :destroy, controller: 'users'
 
-  root 'users#new'
+  root 'users#index'
 end

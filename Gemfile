@@ -33,6 +33,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot'
   gem 'factory_bot_rails', '~> 5.1.0'
+  gem 'pry', '~> 0.12.2'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'rubocop', require: false
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
