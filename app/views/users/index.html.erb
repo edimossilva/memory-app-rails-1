@@ -1,8 +1,10 @@
+
 <table>
     <thead>
         <tr>
             <th>Name</th>
             <th>Phone</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -10,10 +12,11 @@
             <tr>
                 <td><%= user.name %></td>
                 <td><%= user.phone %></td>
+                <td><%= link_to 'Edit', "/users/#{user.id}/edit" %></td>
                 <td><%= link_to 'Delete', "/users/#{user.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
 
-<%= link_to 'Click Here!', users_new_path, class: 'btn-click-here' %>
+<%= link_to 'Add a new user!', users_new_path, class: 'btn-click-here' %>
