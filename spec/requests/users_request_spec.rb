@@ -17,7 +17,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'DELETE #destroy' do
-  let!(:user) { create(:user) }
+    let!(:user) { create(:user) }
 
   it 'deletes the user' do
     expect { delete("/users/#{user.id}") }.to change(User, :count).from(1).to(0)
