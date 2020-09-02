@@ -9,16 +9,30 @@ RSpec.describe UsersController, type: :controller do
 
     it 'finds by name Ed' do
       #action
-      get :index, params: { search: 'Ed' }
+      get :index, params: { search_by_name: 'Ed' }
       #assert
       assigns(:users).should eq([user1, user2])
     end
 
     it 'finds by name with da' do
       #action
-      get :index, params: { search: 'Da' }
+      get :index, params: { search_by_name: 'Da' }
       #assert
       assigns(:users).should eq([user])
+    end
+
+    it 'when does not find any user' do
+      #action
+      get :index, params: { search_by_name: 'f' }
+      #assert
+      expect(nil).to be_nil
+    end
+
+    it 'when search is empty' do
+      #action
+      get :index, params: { search_by_name: ' ' }
+      #assert
+      expect(assigns(:users)).to be_empty
     end
   end
 end

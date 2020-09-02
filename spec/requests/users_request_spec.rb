@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-
   describe 'GET /users' do
     it 'returns success status' do
       get '/users'
@@ -42,7 +41,5 @@ RSpec.describe 'Users', type: :request do
       expect(user.name).to eq(params[:name])
       expect(response).to redirect_to action: 'index'
     end
-
   end
-
 end
