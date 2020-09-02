@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   describe 'finds a searched user by name' do
     #prepare
-    let!(:user) { create(:user, name: 'Dan') }
+    let!(:user) { create(:user, name: 'Daniel') }
     let!(:user1) { create(:user, name: 'Edimo') }
     let!(:user2) { create(:user, name: 'Edmilson') }
 
@@ -17,6 +17,13 @@ RSpec.describe UsersController, type: :controller do
     it 'finds by name with da' do
       #action
       get :index, params: { search_by_name: 'Da' }
+      #assert
+      assigns(:users).should eq([user])
+    end
+
+    it 'finds by name with da' do
+      #action
+      get :index, params: { search_by_name: 'iel' }
       #assert
       assigns(:users).should eq([user])
     end
