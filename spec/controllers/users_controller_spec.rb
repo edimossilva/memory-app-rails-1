@@ -21,7 +21,7 @@ RSpec.describe UsersController, type: :controller do
       assigns(:users).should eq([user])
     end
 
-    it 'finds by name with da' do
+    it 'finds by name with iel' do
       #action
       get :index, params: { search_by_name: 'iel' }
       #assert
