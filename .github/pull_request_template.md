@@ -5,6 +5,6 @@
 - any additional information or context
 
 # Checklist 
+- [ ] Unit Tests
 - [ ] Test coverage screenshot
-- [ ] Changes
 - [ ] Deploy link
