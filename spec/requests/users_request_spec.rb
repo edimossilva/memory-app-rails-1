@@ -13,6 +13,12 @@ RSpec.describe 'Users', type: :request do
       user_attributes = FactoryBot.attributes_for(:user)
       expect { post '/users/new', params: user_attributes }.to change(User, :count).by(+1)
     end
+
+    it 'cant create the user' do
+      user_attributes = FactoryBot.attributes_for(:user)
+
+      expect { post '/users/new', params: { name: ''} }.to_not change(User, :count)
+    end
   end
 
   describe 'DELETE #destroy' do

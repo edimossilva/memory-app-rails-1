@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
+
+  context 'GET #new' do
+    it 'should success' do
+      get :new
+      expect(response).to have_http_status(200)
+    end
+  end
+
   describe 'finds a searched user by name' do
     #prepare
     let!(:user) { create(:user, name: 'Daniel') }

@@ -1,9 +1,7 @@
 <h1>New User Form</h1>
 
-<%= form_with do |form| %>
-<h2><%= pluralize(@user.errors.count, "error") %> </h2>
+<%= form_with(local: true) do |form| %>
     <% if @user.errors.any? %>
-    <h2><%= pluralize(@user.errors.count, "error") %> </h2>
         <ul>
             <% @user.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
