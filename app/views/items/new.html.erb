@@ -1,25 +1,25 @@
-<h1>New User Form</h1>
+<h1>New Item Form</h1>
 
 <%= form_with(local: true) do |form| %>
-    <% if @user.errors.any? %>
+    <% if @item.errors.any? %>
         <ul>
-            <% @user.errors.full_messages.each do |msg| %>
+            <% @item.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
         </ul>
     <% end %>
     
     <div class="field">
-        <%= form.label :name %>
-        <%= form.text_field :name %>
+        <%= form.label :key %>
+        <%= form.text_field :key %>
     </div>
     <div class="field">
-        <%= form.label :phone %>
-        <%= form.text_field :phone %>
+        <%= form.label :value %>
+        <%= form.text_field :value %>
     </div>
     <div class="actions">
         <%= form.submit 'Add' %>
     </div>
 
 <% end %>
-<%= link_to 'Back', '/users' %>
+<%= link_to 'Back', '/items' %>
